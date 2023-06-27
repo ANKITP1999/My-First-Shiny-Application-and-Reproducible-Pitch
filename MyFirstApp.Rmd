@@ -1,0 +1,52 @@
+---
+title: "My First App Using Shiny Application"
+author: "Ankit Pandey"
+date: "2023-06-27"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(HistData)
+library(ggplot2)
+```
+
+
+## About the Course Project
+This is a deliverable for the course Developing Data Products as part of the Coursera Data Science Specialization.
+
+Instructions:
+
+- Write a shiny application with associated supporting documentation. 
+- The documentation should be thought of as whatever a user will need to get started using your application.
+- Deploy the application on Rstudio's shiny server
+- Share the application link by pasting it into the provided text box
+- Share your server.R and ui.R code on github
+
+
+## How to use the application
+Using the data provided by Galton Families dataset, we fit a linear model to predict a child's height based on the gender and parent's average height.
+
+The application is running on 
+(https://ankitp0199.shinyapps.io/MyFirstApp/)
+
+ui.R, and Server.R Code in my github repository 
+(https://github.com/ANKITP1999/My-First-Shiny-Application-and-Reproducible-Pitch.git)
+
+## Galton Family Dataset
+
+```{r cars, echo = TRUE}
+data("GaltonFamilies")
+head(GaltonFamilies)
+summary(GaltonFamilies)
+```
+
+## Plot of GaltonFamilies
+
+```{r GaltonFamilies}
+g <- GaltonFamilies
+ggplot(data=GaltonFamilies,aes(x=midparentHeight,y=childHeight,color=gender)) +
+  geom_point()
+
+```
+
